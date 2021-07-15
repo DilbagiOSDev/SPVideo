@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'SPVideo'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of SPVideo.'
+  s.summary          = 'iOS SDK for Real time Video Chat from Superpro.ai'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,9 +17,7 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+  s.description      = "This SDK lets developers integrate a ready made video call solution in their iOS apps with zero development/integration of video call libraries."
 
   s.homepage         = 'https://github.com/aravindhu-gloify/SPVideo'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
@@ -28,15 +26,24 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/aravindhu-gloify/SPVideo.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '12.0'
 
-  s.source_files = 'SPVideo/Classes/**/*'
+#  s.source_files = 'VideoPod/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'SPVideo' => ['SPVideo/Assets/*.png']
-  # }
+    s.swift_version = '5.0'
+#    s.source_files = 'VideoPod/Classes/**/*.{swift,storyboard,xib}'
+#    s.resources = "VideoPod/Assets/**/*."
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+#    s.source_files = 'VideoPod/**/*.{h,m,swift,plist}'
+    s.resources = 'SPVideo/**/*.{storyboard,xib,xcassets,json,png,mp3}'
+    
+    s.source_files = "SPVideo/**/*.{h,m,swift,plist}"
+    
+    s.dependency 'Analytics', '~> 4.1'
+    s.dependency 'Firebase/Firestore'
+    s.dependency 'Firebase/Crashlytics'
+    s.dependency 'HMSVideo', '~> 0.10.0'
+    
+    s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+    s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 end

@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import SPVideo
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ExternalInputData.init().setData(username: "Aravind", meetingId: "711-b070-241", token: "3cf238e1-9447-4455-ad35-735ee857bec3")
         // Do any additional setup after loading the view, typically from a nib.
     }
 

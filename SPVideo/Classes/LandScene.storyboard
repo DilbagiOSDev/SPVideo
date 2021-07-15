@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lyZ-Dp-NcZ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Bold.ttf">
+            <string>Montserrat-Bold</string>
+        </array>
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="JTP-Rc-LdG">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="lyZ-Dp-NcZ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VZF-z8-fD1">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="wFG-Zk-UDO" kind="show" identifier="Deeplink" id="Ycd-Pv-QJF"/>
+                        <segue destination="iqF-bd-gPH" kind="relationship" relationship="rootViewController" id="bda-dQ-4uq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="slB-LM-HQ4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1231" y="-35"/>
+        </scene>
+        <!--Launch View Controller-->
+        <scene sceneID="heb-OQ-aWN">
+            <objects>
+                <viewController storyboardIdentifier="LaunchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iqF-bd-gPH" customClass="LaunchViewController" customModule="SampleFramework" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1gu-wc-kA8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kex-6o-3Wu">
+                                <rect key="frame" x="10" y="256.5" width="394" height="30.5"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoX-32-XfA">
+                                <rect key="frame" x="166.5" y="442.5" width="81" height="21"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_superpro" translatesAutoresizingMaskIntoConstraints="NO" id="3x4-Ap-6bl">
+                                <rect key="frame" x="221" y="578.5" width="74" height="21"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0Y-c8-aY6">
+                                <rect key="frame" x="115" y="578.5" width="101" height="21"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KRE-cE-iVv"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="hoX-32-XfA" firstAttribute="centerY" secondItem="KRE-cE-iVv" secondAttribute="centerY" id="92r-D5-SZ4"/>
+                            <constraint firstItem="3x4-Ap-6bl" firstAttribute="height" secondItem="d0Y-c8-aY6" secondAttribute="height" id="Ak8-hO-zqT"/>
+                            <constraint firstItem="KRE-cE-iVv" firstAttribute="trailing" secondItem="kex-6o-3Wu" secondAttribute="trailing" constant="10" id="F1b-1u-PIf"/>
+                            <constraint firstItem="3x4-Ap-6bl" firstAttribute="centerY" secondItem="d0Y-c8-aY6" secondAttribute="centerY" id="GTE-hI-2TM"/>
+                            <constraint firstItem="3x4-Ap-6bl" firstAttribute="leading" secondItem="d0Y-c8-aY6" secondAttribute="trailing" constant="5" id="gOG-rC-iDz"/>
+                            <constraint firstItem="d0Y-c8-aY6" firstAttribute="centerX" secondItem="KRE-cE-iVv" secondAttribute="centerX" multiplier="0.8" id="gsG-lY-Nbr"/>
+                            <constraint firstItem="3x4-Ap-6bl" firstAttribute="width" secondItem="d0Y-c8-aY6" secondAttribute="width" multiplier="0.732673" id="iol-aj-tPA"/>
+                            <constraint firstItem="kex-6o-3Wu" firstAttribute="leading" secondItem="KRE-cE-iVv" secondAttribute="leading" constant="10" id="kgQ-IV-tjH"/>
+                            <constraint firstItem="d0Y-c8-aY6" firstAttribute="centerY" secondItem="KRE-cE-iVv" secondAttribute="centerY" multiplier="1.3" id="mfp-aV-U5e"/>
+                            <constraint firstItem="hoX-32-XfA" firstAttribute="centerX" secondItem="KRE-cE-iVv" secondAttribute="centerX" id="nSz-UL-SCm"/>
+                            <constraint firstItem="kex-6o-3Wu" firstAttribute="centerX" secondItem="KRE-cE-iVv" secondAttribute="centerX" id="nTn-53-15K"/>
+                            <constraint firstItem="kex-6o-3Wu" firstAttribute="centerY" secondItem="KRE-cE-iVv" secondAttribute="centerY" multiplier="0.6" id="zfN-3d-tN4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="p9W-9A-nKT"/>
+                    <connections>
+                        <outlet property="label_teamname" destination="kex-6o-3Wu" id="COI-9v-Vyd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LZf-Pu-908" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-183" y="-35"/>
+        </scene>
+        <!--SetupViewController-->
+        <scene sceneID="fhO-gI-AmE">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Setup" referencedIdentifier="SetupViewController" id="wFG-Zk-UDO" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="v0E-aC-sQd"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vHY-Ob-2lc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-30" y="460"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_superpro" width="64" height="14.5"/>
+    </resources>
+</document>

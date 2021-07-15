@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'SPVideo_Example' do
+  pod 'SPVideo', :path => '../'
+
+  target 'SPVideo_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

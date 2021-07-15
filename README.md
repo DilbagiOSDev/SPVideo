@@ -1,0 +1,29 @@
+# SPVideo
+
+[![CI Status](https://img.shields.io/travis/aravindhu-gloify/SPVideo.svg?style=flat)](https://travis-ci.org/aravindhu-gloify/SPVideo)
+[![Version](https://img.shields.io/cocoapods/v/SPVideo.svg?style=flat)](https://cocoapods.org/pods/SPVideo)
+[![License](https://img.shields.io/cocoapods/l/SPVideo.svg?style=flat)](https://cocoapods.org/pods/SPVideo)
+[![Platform](https://img.shields.io/cocoapods/p/SPVideo.svg?style=flat)](https://cocoapods.org/pods/SPVideo)
+
+## Example
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
+## Requirements
+
+## Installation
+
+SPVideo is available through [CocoaPods](https://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod 'SPVideo'
+```
+
+## Author
+
+aravindhu-gloify, aravindhu@gloify.com
+
+## License
+
+SPVideo is available under the MIT license. See the LICENSE file for more info.

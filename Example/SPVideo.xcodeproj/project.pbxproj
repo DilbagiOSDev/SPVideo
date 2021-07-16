@@ -516,6 +516,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BEA214DB88E038FDFE2284E6 /* Pods-SPVideo_Example.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					x86_64,
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = U3QV4P4G28;
 				ENABLE_BITCODE = NO;
@@ -535,6 +539,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EB57952FF400BD58A10DB475 /* Pods-SPVideo_Example.release.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					x86_64,
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = U3QV4P4G28;
 				ENABLE_BITCODE = NO;

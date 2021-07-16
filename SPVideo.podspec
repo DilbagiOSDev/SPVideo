@@ -43,6 +43,7 @@ Pod::Spec.new do |s|
     s.dependency 'Firebase/Firestore'
     s.dependency 'Firebase/Crashlytics'
     s.dependency 'HMSVideo', '~> 0.10.0'
+    s.static_framework = true
     
     s.pod_target_xcconfig = {
         'OTHER_LDFLAGS' => '$(inherited) -ObjC'

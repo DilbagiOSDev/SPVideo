@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SPVideo'
-  s.version          = '0.1.3'
+  s.version          = '0.1.4'
   s.summary          = 'iOS SDK for Real time Video Chat from Superpro.ai'
 
 # This description is used to generate tags and improve search results.
@@ -31,19 +31,23 @@ Pod::Spec.new do |s|
 #  s.source_files = 'VideoPod/Classes/**/*'
   
     s.swift_version = '5.0'
-#    s.source_files = 'VideoPod/Classes/**/*.{swift,storyboard,xib}'
-#    s.resources = "VideoPod/Assets/**/*."
-
-#    s.source_files = 'VideoPod/**/*.{h,m,swift,plist}'
-    s.resources = 'SPVideo/**/*.{storyboard,xib,xcassets,json,png,mp3,ttf}'
+    #s.resources = 'SPVideo/**/*.{storyboard,xib,xcassets,json,png,mp3,ttf}'
+    s.resources = 'SPVideo/**/*.{storyboard,xib}'
+    s.source_files = "SPVideo/**/*.{h,m,swift}"
     
-    s.source_files = "SPVideo/**/*.{h,m,swift,plist}"
+    s.resource_bundles = {
+      'SPVideo' => [ 'SPVideo/Assets/**/*' ]
+    }
     
     s.dependency 'Analytics', '~> 4.1'
     s.dependency 'Firebase/Firestore'
     s.dependency 'Firebase/Crashlytics'
     s.dependency 'HMSVideo', '~> 0.10.0'
     s.static_framework = true
+    
+    s.info_plist = { 'CFBundleIdentifier' => 'com.superpro.VideoCall-IOS' }
+
+    s.pod_target_xcconfig = { 'PRODUCT_BUNDLE_IDENTIFIER': 'com.superpro.VideoCall-IOS' }
     
     s.pod_target_xcconfig = {
         'OTHER_LDFLAGS' => '$(inherited) -ObjC'

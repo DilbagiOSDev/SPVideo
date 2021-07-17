@@ -35,7 +35,7 @@ Pod::Spec.new do |s|
 #    s.resources = "VideoPod/Assets/**/*."
 
 #    s.source_files = 'VideoPod/**/*.{h,m,swift,plist}'
-    s.resources = 'SPVideo/**/*.{storyboard,xib,xcassets,json,png,mp3}'
+    s.resources = 'SPVideo/**/*.{storyboard,xib,xcassets,json,png,mp3,ttf}'
     
     s.source_files = "SPVideo/**/*.{h,m,swift,plist}"
     

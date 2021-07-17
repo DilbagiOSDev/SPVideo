@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SPVideo'
-  s.version          = '0.1.4'
+  s.version          = '0.1.5'
   s.summary          = 'iOS SDK for Real time Video Chat from Superpro.ai'
 
 # This description is used to generate tags and improve search results.
@@ -32,18 +32,19 @@ Pod::Spec.new do |s|
   
     s.swift_version = '5.0'
     #s.resources = 'SPVideo/**/*.{storyboard,xib,xcassets,json,png,mp3,ttf}'
-    s.resources = 'SPVideo/**/*.{storyboard,xib}'
+    s.resources = 'SPVideo/**/*.{storyboard,xib,xcassets,json,png,mp3,ttf,plist}'
     s.source_files = "SPVideo/**/*.{h,m,swift}"
     
-    s.resource_bundles = {
-      'SPVideo' => [ 'SPVideo/Assets/**/*' ]
-    }
+#    s.resource_bundles = {
+#      'SPVideo' => [ 'SPVideo/Assets/**/*' ]
+#    }
     
     s.dependency 'Analytics', '~> 4.1'
-    s.dependency 'Firebase/Firestore'
+    s.dependency 'FirebaseFirestore'
     s.dependency 'Firebase/Crashlytics'
     s.dependency 'HMSVideo', '~> 0.10.0'
-    s.static_framework = true
+    #s.static_framework = true
+    
     
     s.info_plist = { 'CFBundleIdentifier' => 'com.superpro.VideoCall-IOS' }
 

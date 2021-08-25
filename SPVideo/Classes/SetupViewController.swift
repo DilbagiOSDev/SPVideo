@@ -489,6 +489,12 @@ public class SetupViewController: UIViewController,UIScrollViewDelegate,UITableV
                 }
 
                 let settings = AVCapturePhotoSettings()
+                
+                #if (!arch(x86_64))
+                        guard let preview = settings.previewPhotoFormat?.first else { return }
+                        settings.previewPhotoFormat = [kCVPixelBufferPixelFormatTypeKey as String: preview]
+                        output.capturePhoto(with: settings, delegate: self)
+                    #endif
                 let previewPixelType = settings.availablePreviewPhotoPixelFormatTypes.first!
 
                 let previewFormat = [kCVPixelBufferPixelFormatTypeKey as String: previewPixelType,

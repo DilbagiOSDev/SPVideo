@@ -490,12 +490,25 @@ public class SetupViewController: UIViewController,UIScrollViewDelegate,UITableV
 
                 let settings = AVCapturePhotoSettings()
                 
-                #if (!arch(x86_64))
-                        guard let preview = settings.previewPhotoFormat?.first else { return }
-                        settings.previewPhotoFormat = [kCVPixelBufferPixelFormatTypeKey as String: preview]
-                        output.capturePhoto(with: settings, delegate: self)
-                    #endif
+//                #if (!arch(x86_64))
+//                        guard let preview = settings.previewPhotoFormat?.first else { return }
+//                        settings.previewPhotoFormat = [kCVPixelBufferPixelFormatTypeKey as String: preview]
+//                        output.capturePhoto(with: settings, delegate: self)
+//                    #endif
+  
+                //Bug Report:
+               // https://developer.apple.com/forums/thread/86810?answerId=259270022#259270022
+//                There is a regression of this bug, it's reproducible in Xcode 12.0 (12A7209), but only when targeting the simulator. It works fine for a real device.
+//
+//                Here's an example workaround that I'm using in Swift 5.3:
+                
+                #if targetEnvironment(simulator)
+                let previewPixelType = settings.__availablePreviewPhotoPixelFormatTypes.first!
+                #else
                 let previewPixelType = settings.availablePreviewPhotoPixelFormatTypes.first!
+                #endif
+                
+               // let previewPixelType = settings.availablePreviewPhotoPixelFormatTypes.first!
 
                 let previewFormat = [kCVPixelBufferPixelFormatTypeKey as String: previewPixelType,
                                      kCVPixelBufferWidthKey as String: view.frame.size.width,

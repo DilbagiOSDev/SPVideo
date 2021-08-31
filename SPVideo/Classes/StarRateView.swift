@@ -14,8 +14,8 @@ protocol RatingViewDelegate {
 @IBDesignable
 class StarRateView: UIView {
     // MARK: - Properties
-    let bundle = Bundle(url: Bundle(for: SetupViewController.self).url(forResource: "SPVideo", withExtension: "bundle")!)!
-    //let bundle = Bundle(identifier: Constants.bundleId)
+   // let bundle = Bundle(url: Bundle(for: SetupViewController.self).url(forResource: "SPVideo", withExtension: "bundle")!)!
+    let bundle = Bundle(identifier: Constants.bundleId)
     var imageViewList = [UIImageView]()
     var rating = 0.0
     var delegate: RatingViewDelegate!

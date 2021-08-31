@@ -45,9 +45,10 @@ Pod::Spec.new do |s|
     s.dependency 'Analytics', '~> 4.1'
     s.dependency 'FirebaseFirestore'
     s.dependency 'Firebase/Crashlytics'
-    #s.dependency 'HMSVideo', '~> 0.10.0'
+    s.dependency 'HMSVideo', '~> 0.10.0'
     s.static_framework = true
-    s.ios.vendored_frameworks = 'SPVideo/**/*.{framework}'
+#    s.ios.vendored_frameworks = 'SPVideo/**/*.{framework}'
+#    s.public_header_files = "SPVideo/HMSVideo.framework/Headers/*.h"
     
     s.info_plist = { 'CFBundleIdentifier' => 'com.superpro.VideoCall-IOS' }
 

@@ -623,9 +623,9 @@ public class MeetingViewController: UIViewController {
     
     @IBAction func soundCheckPressed(_ sender: UIButton) {
         self.uibutton_play_view.isHidden = false
-        
-        let bundle = Bundle(identifier: Constants.bundleId)
-        let path = bundle?.path(forResource: "sample_audio", ofType: "mp3")
+        let bundle = Bundle(url: Bundle(for: SetupViewController.self).url(forResource: "SPVideo", withExtension: "bundle")!)!
+        //let bundle = Bundle(identifier: Constants.bundleId)
+        let path = bundle.path(forResource: "sample_audio", ofType: "mp3")
         let url = URL(fileURLWithPath: path!)
 
         do {

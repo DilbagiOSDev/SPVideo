@@ -10,8 +10,23 @@ import UIKit
 
 extension UIFont {
     private static func registerFont(withName name: String, fileExtension: String) {
-        let frameworkBundle = Bundle(identifier: Constants.bundleId)
-        let pathForResourceString = frameworkBundle!.path(forResource: name, ofType: fileExtension)
+//        let frameworkBundle = Bundle(identifier: Constants.bundleId)
+//        let pathForResourceString = frameworkBundle!.path(forResource: name, ofType: fileExtension)
+//        let fontData = NSData(contentsOfFile: pathForResourceString!)
+//        let dataProvider = CGDataProvider(data: fontData!)
+//        let fontRef = CGFont(dataProvider!)
+//        var errorRef: Unmanaged<CFError>? = nil
+//
+//        if (CTFontManagerRegisterGraphicsFont(fontRef!, &errorRef) == false) {
+//            print("Error registering font")
+//        }else{
+//           print("Register successfully")
+//        }
+        let bundle = Bundle(url: Bundle(for: SetupViewController.self).url(forResource: "SPVideo", withExtension: "bundle")!)!
+        
+        let pathForResourceString = bundle.path(forResource: name, ofType: fileExtension)
+    
+        
         let fontData = NSData(contentsOfFile: pathForResourceString!)
         let dataProvider = CGDataProvider(data: fontData!)
         let fontRef = CGFont(dataProvider!)

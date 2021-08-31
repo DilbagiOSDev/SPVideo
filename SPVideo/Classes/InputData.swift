@@ -19,9 +19,12 @@ class InputData: NSObject {
     static let sharedInstance = InputData()
     private override init() {
         super.init()
-        let bundle = Bundle(identifier: Constants.bundleId)
+        let bundle = Bundle(url: Bundle(for: SetupViewController.self).url(forResource: "SPVideo", withExtension: "bundle")!)!
+        
+        //let pathForResourceString = bundle.path(forResource: name, ofType: fileExtension)
+        //let bundle = Bundle(identifier: Constants.bundleId)
         print("bundle\(String(describing: bundle))")
-        let path = bundle?.path(forResource: "GoogleService-Info", ofType: "plist")
+        let path = bundle.path(forResource: "GoogleService-Info", ofType: "plist")
         print("path\(String(describing: path))")
         //        let filePath = bundle!.path(forResource: "GoogleService-Info", ofType: "plist")
         //let filePath = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist")

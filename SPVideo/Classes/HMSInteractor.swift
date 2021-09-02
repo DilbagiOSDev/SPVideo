@@ -168,7 +168,7 @@ final class HMSInteractor {
         client.onBroadcast = { [weak self] room, peer, data in
             print(#function, "onBroadcast: ", room.roomId, peer.peerId, data)
             self?.broadcasts.append(data)
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: RoomConstants.broadcastReceived), object: nil, userInfo: ["name": data["receiver"] as! String ,"message": data["message"] as! String,"timestamp" : Utilities.getTimeStamp() as String])
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: RoomConstants.broadcastReceived), object: nil, userInfo: ["name": data["senderName"] as! String ,"message": data["msg"] as! String,"timestamp" : Utilities.getTimeStamp() as String])
             
         }
         

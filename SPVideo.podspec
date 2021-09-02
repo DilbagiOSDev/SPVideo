@@ -48,6 +48,7 @@ Pod::Spec.new do |s|
     s.dependency 'Firebase/Crashlytics'
     s.dependency 'HMSVideo', '~> 0.10.0'
     s.static_framework = true
+   # s.vendored_frameworks = 'HMSVideo.framework'
 #    s.ios.vendored_frameworks = 'SPVideo/**/*.{framework}'
 #    s.public_header_files = "SPVideo/HMSVideo.framework/Headers/*.h"
     

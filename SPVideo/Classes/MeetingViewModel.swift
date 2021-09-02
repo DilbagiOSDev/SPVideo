@@ -280,13 +280,21 @@ final class MeetingViewModel: NSObject,
     }
 
     func sendMessage(_ message: String){
-        hms.send(["sender":hms.localPeer.peerId,"receiver": UserDefaults.standard.value(forKey: Constants.defaultName) as! String, "time": Utilities.getTimeStamp(), "type": "chat","message": message], completion: { isSend,error in
+        hms.send(["senderName": UserDefaults.standard.value(forKey: Constants.defaultName) as! String, "msg": message], completion: { isSend,error in
             if isSend == true{
                 
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: RoomConstants.broadcastReceived), object: nil,userInfo: ["name": UserDefaults.standard.value(forKey: Constants.defaultName) as! String,"message": message,"timestamp" : Utilities.getTimeStamp() as String])
              
         }
         })
+        
+//        hms.send(["sender":hms.localPeer.peerId,"receiver": UserDefaults.standard.value(forKey: Constants.defaultName) as! String, "time": Utilities.getTimeStamp(), "type": "chat","msg": message], completion: { isSend,error in
+//            if isSend == true{
+//
+//                NotificationCenter.default.post(name: NSNotification.Name(rawValue: RoomConstants.broadcastReceived), object: nil,userInfo: ["name": UserDefaults.standard.value(forKey: Constants.defaultName) as! String,"message": message,"timestamp" : Utilities.getTimeStamp() as String])
+//
+//        }
+//        })
     }
     
     func sendFeedBack(_ view: UIView,_ rating: Int, _ feedBack : String){

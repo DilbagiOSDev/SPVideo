@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SPVideo'
-  s.version          = '0.1.13.3'
+  s.version          = '0.1.13.4'
   s.summary          = 'iOS SDK for Real time Video Chat from Superpro.ai'
 
 # This description is used to generate tags and improve search results.
@@ -19,12 +19,14 @@ Pod::Spec.new do |s|
 
   s.description      = "This SDK lets developers integrate a ready made video call solution in their iOS apps with zero development/integration of video call libraries."
 
-  s.homepage         = 'https://github.com/aravindhu-gloify/SPVideo'
+  #s.homepage         = 'https://github.com/aravindhu-gloify/SPVideo'
+  s.homepage         = 'https://github.com/superproai/SPVideo'
+  
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'aravindhu-gloify' => 'aravindhu@gloify.com' }
-  s.source           = { :git => 'https://github.com/aravindhu-gloify/SPVideo.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => 'https://github.com/superproai/SPVideo.git', :tag => s.version.to_s }
+ 
 
   s.ios.deployment_target = '11.0'
 

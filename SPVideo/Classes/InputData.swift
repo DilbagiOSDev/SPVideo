@@ -11,9 +11,6 @@ import FirebaseCore
 import FirebaseFirestore
 import Segment
 
-
-
-
 class InputData: NSObject {
     
     static let sharedInstance = InputData()
@@ -32,7 +29,7 @@ class InputData: NSObject {
         
         if let lPath = path {
             let options = FirebaseOptions(contentsOfFile: lPath)
-            FirebaseApp.configure(options: options!)
+            FirebaseApp.configure(name: "secondary", options: options!)
             Firestore.firestore()
         }else {
             print("No Google plist file path is found")
